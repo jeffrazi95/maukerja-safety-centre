@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Jobseeker Safety Hub &amp; Hiring Source Verification | Maukerja</title>
+<meta name="description" content="Stay safer while job hunting with Maukerja. Learn how to recognise suspicious recruitment activity and verify hiring messages, calls, emails and interview invitations.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,900;1,500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FFFBF7;
+    --paper-raised: #FFFFFF;
+    --ink: #241B18;
+    --ink-soft: #6E615D;
+    --ink-faint: #A69890;
+    --red: #EE3C4D;
+    --red-deep: #BC1021;
+    --red-tint: #FEEEF0;
+    --red-tint-border: #F8C9CD;
+    --gold: #A66E17;
+    --gold-ink: #6E4A0F;
+    --gold-tint: #FBF1DE;
+    --gold-tint-border: #EFD9A8;
+    --border: #EFE3DC;
+    --focus: #EE3C4D;
+    --shadow: 0 20px 45px -25px rgba(188, 16, 33, 0.35);
+  }
+
+  /* JobGuard always renders in Maukerja's light brand palette —
+     maukerja.my has no dark mode, so this page doesn't switch either,
+     regardless of the visitor's device/browser theme setting. */
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans", -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .wrap { padding-inline: 40px; }
+  }
+
+  /* ---------- Topbar ---------- */
+
+  .topbar {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand-shield {
+    width: 24px;
+    height: 24px;
+    color: var(--red);
+    flex-shrink: 0;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--border);
+  }
+
+  .topbar .brandline {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .topbar .brandline strong {
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+
+  .topbar .brandline span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    color: var(--ink-soft);
+  }
+
+  .topnav {
+    display: none;
+    align-items: center;
+    gap: 26px;
+  }
+
+  @media (min-width: 900px) {
+    .topnav { display: flex; }
+  }
+
+  .topnav a {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .topnav a:hover { color: var(--red); }
+
+  .topnav a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  /* ---------- Eyebrow ---------- */
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-shield {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: center;
+    padding-block: 28px 20px;
+  }
+
+  @media (min-width: 900px) {
+    .hero .wrap {
+      grid-template-columns: 1fr 1.15fr;
+      gap: 32px;
+      padding-block: 40px 28px;
+    }
+  }
+
+  .hero h1 {
+    margin: 18px 0 20px;
+    font-size: clamp(1.75rem, 4.1vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.14;
+    text-wrap: balance;
+  }
+
+  .hero-highlight {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .hero .lede {
+    margin: 0 0 32px;
+    max-width: 46ch;
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding: 15px 30px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  .btn:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: #FFFDFC;
+    box-shadow: var(--shadow);
+  }
+
+  .btn-primary:hover { background: var(--red-deep); transform: translateY(-1px); }
+
+  .btn-inverse {
+    background: #FFFDFC;
+    color: var(--red-deep);
+  }
+
+  .btn-inverse:hover { background: var(--red-tint); transform: translateY(-1px); }
+
+  .trust-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  .trust-line svg { flex-shrink: 0; }
+
+  .hero-art {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+  }
+
+  .hero-illustration-stack {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+  }
+
+  @media (min-width: 900px) {
+    .hero-illustration-stack { max-width: 100%; }
+  }
+
+  .hero-illustration {
+    display: block;
+    width: 100%;
+    font-family: 'Poppins', 'Noto Sans', sans-serif;
+  }
+
+  .hero-mascot-photo {
+    position: absolute;
+    left: 24.5%;
+    top: 1.3%;
+    width: 44.2%;
+    height: auto;
+    pointer-events: none;
+  }
+
+  /* ---------- How JobGuard Works ---------- */
+
+  .hero {
+    background: var(--paper);
+  }
+
+  .steps {
+    padding-block: 20px 40px;
+    background: var(--paper-raised);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .steps h2 {
+    margin: 14px 0 6px;
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .section-explainer {
+    margin: 10px 0 36px;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink-soft);
+    max-width: 56ch;
+  }
+
+  .process-heading {
+    margin: 0 0 24px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  @media (min-width: 760px) {
+    .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  }
+
+  .step {
+    position: relative;
+    padding-top: 38px;
+    border-top: 2px solid var(--border);
+  }
+
+  .step .num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--red);
+    color: #FFFDFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.92rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (min-width: 760px) {
+    .step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -17px;
+      width: 9px;
+      height: 9px;
+      border-top: 2px solid var(--ink-faint);
+      border-right: 2px solid var(--ink-faint);
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+  }
+
+  .step-label-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 8px;
+  }
+
+  .step-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--red);
+  }
+
+  .step-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .step h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+  }
+
+  .step p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Trust row (inline, subtle — inside IsItLegit? journey) ---------- */
+
+  .trust-row {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .trust-row-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 0 1 62%;
+    min-width: 280px;
+  }
+
+  .trust-row svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    color: var(--ink-faint);
+  }
+
+  .trust-row-cta {
+    flex-shrink: 0;
+  }
+
+  .trust-row-title {
+    margin: 0 0 2px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--ink);
+  }
+
+  .trust-row-text {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+
+  /* ---------- Situations (compact alert strip) ---------- */
+
+  .situations {
+    padding-block: 28px;
+    background: var(--red-tint);
+  }
+
+  .situations-head {
+    max-width: 640px;
+    margin-bottom: 16px;
+  }
+
+  .situations-head h2 {
+    margin: 8px 0 6px;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .brand-tag { color: var(--red); }
+
+  .situations-head p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .situations-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (min-width: 760px) {
+    .situations-row { flex-direction: row; gap: 12px; }
+  }
+
+  .situation-card {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--gold-tint);
+    border: 1px solid var(--gold-tint-border);
+  }
+
+  .situation-card svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    color: var(--gold-ink);
+  }
+
+  .situation-card .cue {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--gold-ink);
+    opacity: 0.8;
+  }
+
+  .situation-card h3 {
+    margin: 0 0 2px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+
+  .situation-card p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* ---------- Safety Guides ---------- */
+
+  .articles {
+    padding-block: 56px;
+    background: var(--paper-raised);
+  }
+
+  .articles-head {
+    max-width: 640px;
+    margin-bottom: 32px;
+  }
+
+  .articles-head h2 {
+    margin: 14px 0 12px;
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .articles-head p {
+    margin: 0;
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  @media (min-width: 760px) {
+    .articles-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .article-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .article-card:hover {
+    border-color: var(--red-tint-border);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  .article-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .article-card-link:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: -3px;
+  }
+
+  .article-card .thumb {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .article-card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .article-card .body {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .article-card .category {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .article-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+
+  .article-card p {
+    margin: 0 0 16px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .article-card .read-more {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--red);
+  }
+
+  .article-card:hover .read-more { color: var(--red-deep); }
+
+  .read-more .arrow,
+  .articles-cta .arrow {
+    display: inline-block;
+    transition: transform 0.15s ease;
+  }
+
+  .article-card:hover .read-more .arrow,
+  .articles-cta:hover .arrow { transform: translateX(3px); }
+
+  .articles-cta {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .articles-cta:hover { color: var(--red-deep); }
+
+  /* ---------- FAQ ---------- */
+
+  .faq {
+    padding-block: 56px;
+    background: var(--paper);
+  }
+
+  .faq-head {
+    max-width: 640px;
+    margin-bottom: 28px;
+  }
+
+  .faq-head h2 {
+    margin: 14px 0 12px;
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .faq-head p {
+    margin: 0;
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  .faq-list {
+    max-width: 780px;
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 28px 18px 0;
+    position: relative;
+    font-weight: 700;
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 2px;
+    top: 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--red);
+    transition: transform 0.15s ease;
+  }
+
+  .faq-item[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-item summary:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .faq-item .answer {
+    margin: 0 28px 20px 0;
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+    max-width: 68ch;
+  }
+
+  /* ---------- Final CTA ---------- */
+
+  .final-cta {
+    background: var(--red);
+    color: #FFFDFC;
+    padding-block: 36px;
+  }
+
+  .final-cta .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  @media (min-width: 700px) {
+    .final-cta .wrap {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+  }
+
+  .final-cta .copy h2 {
+    margin: 0 0 6px;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 900;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .final-cta .copy h2 .brand-tag-inverse { color: #FBE3E1; }
+
+  .final-cta .copy p {
+    margin: 0;
+    font-size: 0.98rem;
+    color: #FBE3E1;
+    max-width: 46ch;
+  }
+
+  .final-cta .btn { flex-shrink: 0; }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding-block: 24px 32px;
+  }
+
+  @media (max-width: 899px) {
+    footer { padding-bottom: 92px; }
+  }
+
+  footer .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    max-width: 62ch;
+  }
+
+  /* ---------- Sticky mobile CTA ---------- */
+
+  .sticky-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+    background: var(--paper-raised);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -12px 30px -20px rgba(0, 0, 0, 0.25);
+    transform: translateY(120%);
+    transition: transform 0.25s ease;
+  }
+
+  .sticky-cta.visible { transform: translateY(0); }
+
+  .sticky-cta .btn { width: 100%; justify-content: center; }
+
+  @media (min-width: 900px) {
+    .sticky-cta { display: none; }
+  }
+
+  /* ---------- Chat demo (artifact-preview only) ---------- */
+
+  .chat-demo-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 12, 10, 0.45);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 100;
+    padding: 0;
+  }
+
+  @media (min-width: 640px) {
+    .chat-demo-backdrop { align-items: center; padding: 24px; }
+  }
+
+  .chat-demo-backdrop[hidden] { display: none; }
+
+  .chat-demo-panel {
+    background: var(--paper-raised);
+    color: var(--ink);
+    width: 100%;
+    max-width: 380px;
+    border-radius: 20px 20px 0 0;
+    padding: 26px 24px 30px;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (min-width: 640px) {
+    .chat-demo-panel { border-radius: 20px; }
+  }
+
+  .chat-demo-panel .row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .chat-demo-panel .row .brand-mark {
+    width: 30px;
+    height: 30px;
+    box-shadow: none;
+  }
+
+  .chat-demo-panel .row strong { font-size: 0.95rem; }
+
+  .chat-demo-panel .bubble {
+    background: var(--red-tint);
+    border: 1px solid var(--red-tint-border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.92rem;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .chat-demo-panel .note {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin: 0 0 16px;
+  }
+
+  .chat-demo-panel .btn { width: 100%; justify-content: center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <img class="brand-mark" src="assets/logo.png" alt="Maukerja">
+      <div class="brandline">
+        <strong>Maukerja</strong>
+        <span>Safety Centre</span>
+      </div>
+      <svg class="brand-shield" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12.2l2.2 2.2 4.3-4.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <nav class="topnav" aria-label="Page navigation">
+      <a href="#verification">IsItLegit?</a>
+      <a href="#articles">Safety Guides</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Maukerja Safety Centre<svg class="eyebrow-shield" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12.2l2.2 2.2 4.3-4.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h1>Sure Ahhh?</h1>
+        <p class="hero-highlight">Got contacted about a job? <span class="brand-tag">#CheckDulu</span> before you respond.</p>
+        <p class="lede">Know what to check when you receive job calls, messages or interview invitations.</p>
+        <div class="cta-group">
+          <span class="trust-line">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Never share your OTP or pay to get a job.
+          </span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-illustration-stack">
+        <svg class="hero-illustration" viewBox="-40 0 940 780" role="img" aria-label="Illustration showing a call, an email and a WhatsApp message arriving, with a JobGuard team member checking them">
+<defs>
+  <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#3a1010" flood-opacity="0.10"></feDropShadow>
+  </filter>
+</defs>
+
+<!-- CALL CARD (top right) -->
+<g transform="translate(555,10) scale(1.15)" filter="url(#softShadow)">
+  <path d="M20 0 H230 C241 0 250 9 250 20 V98 C250 109 241 118 230 118 H20 C9 118 0 109 0 98 V69 L-26 59 L0 49 V20 C0 9 9 0 20 0 Z" fill="#FFFFFF" stroke="#ECE1D8" stroke-width="2"></path>
+  <circle cx="38" cy="59" r="20" fill="#F3EDE7"></circle>
+  <path d="M30 51 C34 47 38 49 40 53 C41 55 40 57 38 59 C41 65 44 68 50 71 C52 69 54 68 56 69 C60 71 63 75 59 79 C55 83 47 81 40 77 C31 72 26 64 26 59 C26 56 28 53 30 51 Z" fill="#A81C39"></path>
+  <text x="70" y="52" font-size="12" font-weight="600" letter-spacing="1" fill="#9A8F86">INCOMING CALL</text>
+  <text x="70" y="76" font-size="21" font-weight="700" fill="#241F1C">ABC Company</text>
+</g>
+
+<!-- EMAIL CARD (bottom right) -->
+<g transform="translate(560,470) scale(1.15)" filter="url(#softShadow)">
+  <path d="M20 0 H230 C241 0 250 9 250 20 V108 C250 119 241 128 230 128 H20 C9 128 0 119 0 108 V74 L-26 64 L0 54 V20 C0 9 9 0 20 0 Z" fill="#FFFFFF" stroke="#ECE1D8" stroke-width="2"></path>
+  <rect x="26" y="33" width="46" height="34" rx="6" fill="none" stroke="#A81C39" stroke-width="4"></rect>
+  <path d="M26 35 L49 55 L72 35" fill="none" stroke="#A81C39" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <text x="90" y="47" font-size="12" font-weight="600" letter-spacing="1" fill="#9A8F86">NEW EMAIL</text>
+  <text x="90" y="71" font-size="20" font-weight="700" fill="#241F1C">Interview</text>
+  <text x="90" y="95" font-size="20" font-weight="700" fill="#241F1C">Invitation</text>
+</g>
+
+<!-- MESSAGE CARD (top left) -->
+<g transform="translate(-40,30) scale(1.15)" filter="url(#softShadow)">
+  <path d="M20 0 H220 C231 0 240 9 240 20 V48 L266 58 L240 68 V96 C240 107 231 116 220 116 H20 C9 116 0 107 0 96 V20 C0 9 9 0 20 0 Z" fill="#FFFFFF" stroke="#ECE1D8" stroke-width="2"></path>
+  <circle cx="34" cy="49" r="16" fill="#F3EDE7"></circle>
+  <circle cx="34" cy="49" r="9" fill="#A81C39"></circle>
+  <text x="60" y="44" font-size="12" font-weight="600" letter-spacing="1" fill="#9A8F86">NEW MESSAGE</text>
+  <text x="60" y="69" font-size="15" font-weight="600" fill="#241F1C">Hi, I'm contacting</text>
+  <text x="60" y="90" font-size="15" font-weight="600" fill="#241F1C">you about a job...</text>
+</g>
+
+        </svg>
+        <img class="hero-mascot-photo" src="assets/mascot-thinking.png" alt="JobGuard team member on a call, checking a hiring message">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="verification">
+    <div class="wrap">
+      <span class="eyebrow">Hiring Source Verification</span>
+      <h2>IsItLegit?</h2>
+      <p class="section-explainer">We can help check whether the person contacting you is associated with the employer.</p>
+
+      <h3 class="process-heading">How it works</h3>
+      <div class="steps-grid">
+        <div class="step">
+          <span class="num">01</span>
+          <div class="step-label-row">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-4 4V5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span class="step-label">You Send</span>
+          </div>
+          <h3>Share what you received</h3>
+          <p>Send us your Maukerja job application details, contact details and hiring message.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <div class="step-label-row">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16" r="0.9" fill="currentColor"/></svg>
+            <span class="step-label">We Check</span>
+          </div>
+          <h3>We check the hiring source</h3>
+          <p>We check it against Maukerja's job and employer records, and confirm with the employer when needed.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <div class="step-label-row">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="step-label">You Know</span>
+          </div>
+          <h3>Get your result</h3>
+          <p>We'll let you know whether the hiring source can be verified.</p>
+        </div>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-row-left">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16" r="0.9" fill="currentColor"/></svg>
+          <div>
+            <p class="trust-row-title">We verify. We don't disclose.</p>
+            <p class="trust-row-text">We use your information only for the check. The employer's registered contact information stays private.</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary trust-row-cta" data-open-chat>
+          Let’s #CheckDulu
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="situations">
+    <div class="wrap">
+      <div class="situations-head">
+        <span class="eyebrow">Stay Alert</span>
+        <h2>FeelsOff? <span class="brand-tag">#CheckDulu</span></h2>
+        <p>Not sure about a hiring message or request? Here are a few things worth checking before you continue.</p>
+      </div>
+      <div class="situations-row">
+        <div class="situation-card">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 11h18" stroke="currentColor" stroke-width="1.7"/><circle cx="7.5" cy="15" r="1.2" fill="currentColor"/></svg>
+          <div>
+            <span class="cue">Payment</span>
+            <h3>Asked to make a payment?</h3>
+            <p>Never pay to secure a job.</p>
+          </div>
+        </div>
+        <div class="situation-card">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="15" r="1.3" fill="currentColor"/></svg>
+          <div>
+            <span class="cue">OTP</span>
+            <h3>Asked for your OTP?</h3>
+            <p>Never share OTPs or verification codes.</p>
+          </div>
+        </div>
+        <div class="situation-card">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-4 4V5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="14.6" r="0.9" fill="currentColor"/></svg>
+          <div>
+            <span class="cue">Unexpected Contact</span>
+            <h3>Don't recognise who contacted you?</h3>
+            <p>Pause and check before you continue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="articles" id="articles">
+    <div class="wrap">
+      <div class="articles-head">
+        <span class="eyebrow">Safety Awareness</span>
+        <h2>SpotTheSigns.</h2>
+        <p>Know what to look out for before you respond to a hiring message.</p>
+      </div>
+      <div class="articles-grid">
+        <article class="article-card">
+          <a class="article-card-link" href="#">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/safety-guide-recruiter.jpg" alt="" loading="lazy">
+            </div>
+            <div class="body">
+              <span class="category">Recruiter Safety</span>
+              <h3>How to Tell If a Recruiter Is Genuine</h3>
+              <p>Received a message, call or email from someone claiming to be a recruiter? Learn what to check before you respond.</p>
+              <span class="read-more">Read article <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a class="article-card-link" href="#">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/safety-guide-whatsapp.jpg" alt="" loading="lazy">
+            </div>
+            <div class="body">
+              <span class="category">Job Scams</span>
+              <h3>Received a Job Offer on WhatsApp? Check These First</h3>
+              <p>Unexpected job opportunities can look convincing. Know what to look out for before sharing information or taking the next step.</p>
+              <span class="read-more">Read article <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a class="article-card-link" href="#">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/safety-guide-redflags.jpg" alt="" loading="lazy">
+            </div>
+            <div class="body">
+              <span class="category">Jobseeker Safety</span>
+              <h3>Common Job Scam Red Flags to Look Out For</h3>
+              <p>From payment requests to suspicious links and unusual job offers, learn the warning signs that should make you stop and check first.</p>
+              <span class="read-more">Read article <span class="arrow">&rarr;</span></span>
+            </div>
+          </a>
+        </article>
+      </div>
+      <a href="#" class="articles-cta">View All Safety Guides <span class="arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="faq-head">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers about hiring source checks and staying safe.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How does Hiring Source Verification work?</summary>
+          <p class="answer">If you've received a hiring message, call or email related to a job you applied for through Maukerja, share the details with us. We'll check the information against Maukerja's job and employer records, and confirm directly with the employer when needed, then let you know whether the hiring source can be verified.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What information should I provide for verification?</summary>
+          <p class="answer">Provide the company name, job position, phone number or email that contacted you, and a screenshot of the hiring message or interview invitation.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can Maukerja check a phone number or email that contacted me?</summary>
+          <p class="answer">Yes. Share the phone number or email that contacted you together with the company name, job position and relevant screenshots, and we'll help verify the hiring source.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does "Unable to Verify" mean?</summary>
+          <p class="answer">It means we couldn't associate the hiring contact with the employer using the information available to us. It doesn't confirm anything either way — we'd recommend being cautious, and avoiding sharing OTPs, making payments or providing sensitive information until you're confident about the hiring source.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does Hiring Source Verification take?</summary>
+          <p class="answer">Some cases can be checked using the information available to us. Others may take longer if we need to confirm the details directly with the employer.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can Maukerja check a hiring message for a job I applied for somewhere else?</summary>
+          <p class="answer">Hiring Source Verification is for hiring messages related to jobs you've applied for through Maukerja. If the message is unrelated to a Maukerja application, we may not have the information needed to verify the hiring source.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I don't remember applying for the job?</summary>
+          <p class="answer">Check your Maukerja application history first, and avoid sharing sensitive information or making any payment while you're unsure. If the hiring message is related to a job you applied for through Maukerja, you can submit the details for Hiring Source Verification.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will Maukerja share the employer's registered phone number or email?</summary>
+          <p class="answer">No. For privacy and security purposes, we don't disclose an employer's registered contact information. Share the contact details you received with us and we'll help verify the hiring source.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What should I do while waiting for verification?</summary>
+          <p class="answer">Avoid sharing OTPs, making payments or providing sensitive personal information until you're confident about the hiring source.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What should I do if something about a hiring message doesn't feel right?</summary>
+          <p class="answer">Pause before you respond. Avoid making payments, sharing OTPs or providing sensitive personal information, and keep screenshots or details of the message. You can also share what you received with us for Hiring Source Verification.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap">
+      <div class="copy">
+        <h2>Still not sure? <span class="brand-tag-inverse">#CheckDulu</span></h2>
+        <p>Received a hiring message for a job you applied for on Maukerja? Send us what you received and we'll help check whether the hiring source can be verified.</p>
+      </div>
+      <button type="button" class="btn btn-inverse" data-open-chat>
+        Let’s #CheckDulu
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Maukerja by AJobThing.</p>
+    <p>Verification is based on the information available to Maukerja at the time of review.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <button type="button" class="btn btn-primary" data-open-chat>
+    Let’s #CheckDulu
+  </button>
+</div>
+
+<div class="chat-demo-backdrop" id="chatDemo" hidden>
+  <div class="chat-demo-panel" role="dialog" aria-modal="true" aria-labelledby="chatDemoTitle">
+    <div class="row">
+      <img class="brand-mark" src="assets/logo.png" alt="">
+      <strong id="chatDemoTitle">JobGuard chat</strong>
+    </div>
+    <div class="bubble">Hi! We can help verify whether a hiring approach you received genuinely comes from the employer.</div>
+    <p class="note">Live chat couldn't be reached right now. Please try again in a moment, or refresh the page.</p>
+    <button type="button" class="btn btn-primary" data-close-chat>Close preview</button>
+  </div>
+</div>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a8f903adcccab344b66e845/1k10cmpmq';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<script>
+  // ------------------------------------------------------------------
+  // Tawk.to integration — real embed above sets window.Tawk_API,
+  // which openVerificationChat() below looks for.
+  // ------------------------------------------------------------------
+
+  function openVerificationChat() {
+    if (window.Tawk_API && typeof window.Tawk_API.maximize === "function") {
+      window.Tawk_API.maximize();
+      return;
+    }
+    var demo = document.getElementById("chatDemo");
+    demo.hidden = false;
+  }
+
+  document.querySelectorAll("[data-open-chat]").forEach(function (btn) {
+    btn.addEventListener("click", openVerificationChat);
+  });
+
+  document.querySelectorAll("[data-close-chat]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.getElementById("chatDemo").hidden = true;
+    });
+  });
+
+  document.getElementById("chatDemo").addEventListener("click", function (e) {
+    if (e.target === e.currentTarget) e.currentTarget.hidden = true;
+  });
+
+  var sticky = document.getElementById("stickyCta");
+  var hero = document.querySelector(".hero");
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        sticky.classList.toggle("visible", !entry.isIntersecting);
+      });
+    },
+    { rootMargin: "-10% 0px 0px 0px" }
+  );
+  io.observe(hero);
+</script>
