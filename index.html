@@ -709,31 +709,41 @@
     color: var(--ink-faint);
   }
 
-  .prep-list {
-    margin: 0 0 20px;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  .info-checklist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 0 0 28px;
   }
 
-  .prep-list li {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    font-size: 0.92rem;
+  @media (min-width: 640px) {
+    .info-checklist { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  }
+
+  .info-checklist-item {
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .steps .info-checklist-item { background: var(--paper-raised); }
+  .report-detail .info-checklist-item { background: var(--paper); }
+
+  .info-checklist-item .label {
+    display: block;
+    margin: 0 0 4px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--red-deep);
+  }
+
+  .info-checklist-item p {
+    margin: 0;
+    font-size: 0.88rem;
     color: var(--ink-soft);
-  }
-
-  .prep-list li::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--red);
-    flex-shrink: 0;
-    margin-top: -2px;
+    line-height: 1.45;
   }
 
   .mini-steps {
@@ -1285,6 +1295,30 @@
       <h2>IsItLegit?</h2>
       <p class="section-explainer">Not sure who contacted you about a job you applied for on Maukerja? JobGuard can help check whether the contact is associated with the employer.</p>
 
+      <p class="mini-label">What to Send Us</p>
+      <div class="info-checklist">
+        <div class="info-checklist-item">
+          <span class="label">Job Details</span>
+          <p>The job title and company you applied to on Maukerja.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Phone Number or Email</span>
+          <p>The contact details used by the person who reached out to you.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Screenshot of the Message</span>
+          <p>A screenshot of the WhatsApp message, SMS, email or other hiring communication you received.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Contact Channel</span>
+          <p>Tell us where they contacted you — for example WhatsApp, phone call, SMS, email or another channel.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Other Details</span>
+          <p>Include any interview details, links or other information you received if relevant.</p>
+        </div>
+      </div>
+
       <h3 class="process-heading">How it works</h3>
       <div class="steps-grid">
         <div class="step">
@@ -1294,7 +1328,7 @@
             <span class="step-label">You Send</span>
           </div>
           <h3>Share what you received</h3>
-          <p>Share the company, job position, contact details and a screenshot of the hiring or interview message.</p>
+          <p>Prepare the job details, contact information and hiring message you received.</p>
         </div>
         <div class="step">
           <span class="num">02</span>
@@ -1303,7 +1337,7 @@
             <span class="step-label">We Check</span>
           </div>
           <h3>We check the hiring source</h3>
-          <p>JobGuard checks the information against relevant Maukerja job and employer records, and may confirm directly with the employer when needed.</p>
+          <p>JobGuard checks the information against relevant Maukerja job and employer records and may confirm with the employer when needed.</p>
         </div>
         <div class="step">
           <span class="num">03</span>
@@ -1336,14 +1370,41 @@
       <span class="eyebrow">Report an Incident</span>
       <h2>How to Report a Scam Incident</h2>
       <p class="lede-text">If you believe you've been affected by a job-related scam, you can report what happened to our team.</p>
-      <p class="mini-label">What to Include</p>
-      <ul class="prep-list">
-        <li>Your contact details</li>
-        <li>Company or job name</li>
-        <li>What happened</li>
-        <li>Screenshots or supporting evidence</li>
-        <li>Payment details, if relevant</li>
-      </ul>
+      <p class="mini-label">What to Include in Your Report</p>
+      <div class="info-checklist">
+        <div class="info-checklist-item">
+          <span class="label">When It Happened</span>
+          <p>Provide the date and approximate time of the incident.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">How They Contacted You</span>
+          <p>Tell us whether they contacted you through WhatsApp, phone call, SMS, email, social media or another channel.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Their Contact Details</span>
+          <p>Include the phone number, email address, social media account or other contact details they used.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Screenshots or Messages</span>
+          <p>Include screenshots of chats, emails, call logs, websites or other communication where available.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Job Details</span>
+          <p>Include the job title, company name and Maukerja job link if available.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">What Happened</span>
+          <p>Briefly explain what happened and what you were asked to do.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Information You Shared</span>
+          <p>Tell us if you already shared any personal, account or payment information.</p>
+        </div>
+        <div class="info-checklist-item">
+          <span class="label">Payment Information</span>
+          <p>If a payment was made, include relevant transaction details or proof of payment.</p>
+        </div>
+      </div>
       <a href="mailto:[OFFICIAL REPORTING EMAIL]" class="btn btn-primary">Report via Email &rarr;</a>
     </div>
   </section>
