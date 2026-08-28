@@ -411,8 +411,17 @@
     text-wrap: balance;
   }
 
+  .section-question {
+    margin: 10px 0 6px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--ink);
+    text-wrap: balance;
+    max-width: 56ch;
+  }
+
   .section-explainer {
-    margin: 10px 0 22px;
+    margin: 4px 0 22px;
     font-size: 1.05rem;
     font-weight: 400;
     color: var(--ink-soft);
@@ -741,6 +750,12 @@
     flex-shrink: 0;
     color: var(--red);
     font-weight: 800;
+  }
+
+  .section-footnote {
+    margin: 10px 0 0;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
   }
 
   .ready-checklist .note {
@@ -1309,7 +1324,8 @@
     <div class="wrap">
       <span class="eyebrow">Verify a Hiring Message</span>
       <h2>IsItLegit?</h2>
-      <p class="section-explainer">Not sure who contacted you about a job you applied for on Maukerja? JobGuard can help check whether the contact is associated with the employer.</p>
+      <p class="section-question">Check who contacted you about a Maukerja job.</p>
+      <p class="section-explainer">JobGuard can help check whether someone contacting you about a job you applied for on Maukerja is associated with the employer.</p>
 
       <div class="ready-checklist">
         <p class="ready-checklist-label">Have these ready:</p>
@@ -1384,6 +1400,7 @@
         <p class="note">Share whatever information you have available.</p>
       </div>
       <a href="mailto:[OFFICIAL REPORTING EMAIL]" class="btn btn-primary">Report via Email &rarr;</a>
+      <p class="section-footnote">Our team will review your report and follow up if more information is needed.</p>
     </div>
   </section>
 
@@ -1461,8 +1478,8 @@
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-4 4V5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="14.6" r="0.9" fill="currentColor"/></svg>
           <div>
             <span class="cue">Unexpected Contact</span>
-            <h3>Don't recognise who contacted you?</h3>
-            <p>Check who contacted you before continuing.</p>
+            <h3>Unexpected hiring message?</h3>
+            <p>Check whether it relates to a job you actually applied for.</p>
           </div>
         </div>
         <div class="situation-card">
