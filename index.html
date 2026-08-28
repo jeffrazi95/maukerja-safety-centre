@@ -666,6 +666,34 @@
     background: var(--paper);
   }
 
+  .report-job-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .report-job-layout {
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  .report-job-media {
+    display: flex;
+  }
+
+  .report-job-media img {
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    object-fit: contain;
+    display: block;
+  }
+
   .report-detail h2 {
     margin: 14px 0 8px;
     font-size: clamp(1.3rem, 2.6vw, 1.6rem);
@@ -1333,29 +1361,36 @@
 
   <section class="report-detail report-job-bg" id="report-job">
     <div class="wrap">
-      <span class="eyebrow">Report a Job Ad</span>
-      <h2>How to Report a Job Ad</h2>
-      <p class="lede-text">If you see a job ad on Maukerja that doesn't look right, you can report it directly from the job listing.</p>
-      <p class="mini-label">How to Report</p>
-      <div class="mini-steps">
-        <div class="mini-step">
-          <span class="num">01</span>
-          <p>Open the job ad</p>
+      <div class="report-job-layout">
+        <div class="report-job-content">
+          <span class="eyebrow">Report a Job Ad</span>
+          <h2>How to Report a Job Ad</h2>
+          <p class="lede-text">If you see a job ad on Maukerja that doesn't look right, you can report it directly from the job listing.</p>
+          <p class="mini-label">How to Report</p>
+          <div class="mini-steps">
+            <div class="mini-step">
+              <span class="num">01</span>
+              <p>Open the job ad</p>
+            </div>
+            <div class="mini-step">
+              <span class="num">02</span>
+              <p>Click "Report"</p>
+            </div>
+            <div class="mini-step">
+              <span class="num">03</span>
+              <p>Choose the relevant reason</p>
+            </div>
+            <div class="mini-step">
+              <span class="num">04</span>
+              <p>Submit your report</p>
+            </div>
+          </div>
+          <p class="placeholder-note">Steps shown are general guidance and will be updated to match Maukerja's exact reporting flow.</p>
         </div>
-        <div class="mini-step">
-          <span class="num">02</span>
-          <p>Click "Report"</p>
-        </div>
-        <div class="mini-step">
-          <span class="num">03</span>
-          <p>Choose the relevant reason</p>
-        </div>
-        <div class="mini-step">
-          <span class="num">04</span>
-          <p>Submit your report</p>
+        <div class="report-job-media">
+          <img src="assets/report-job-ad-guide.png" alt="Maukerja job listing with the three-dot menu open, showing the &quot;Report This Job&quot; option">
         </div>
       </div>
-      <p class="placeholder-note">Steps shown are general guidance and will be updated to match Maukerja's exact reporting flow.</p>
     </div>
   </section>
 
