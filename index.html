@@ -411,17 +411,8 @@
     text-wrap: balance;
   }
 
-  .section-question {
-    margin: 10px 0 6px;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--ink);
-    text-wrap: balance;
-    max-width: 56ch;
-  }
-
   .section-explainer {
-    margin: 4px 0 22px;
+    margin: 10px 0 22px;
     font-size: 1.05rem;
     font-weight: 400;
     color: var(--ink-soft);
@@ -745,24 +736,17 @@
     margin-top: -2px;
   }
 
-  .placeholder-note {
-    margin: 12px 0 0;
-    font-size: 0.8rem;
-    color: var(--ink-faint);
-    max-width: 56ch;
-  }
-
   .mini-steps {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 0 0 8px;
+    gap: 16px;
+    margin: 0 0 4px;
     max-width: 480px;
   }
 
   .mini-step {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
   }
 
@@ -780,13 +764,20 @@
     font-size: 0.8rem;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
+    margin-top: 2px;
   }
 
-  .mini-step p {
-    margin: 0;
+  .mini-step-title {
+    margin: 0 0 2px;
     font-size: 0.95rem;
     color: var(--ink);
-    font-weight: 600;
+    font-weight: 700;
+  }
+
+  .mini-step-desc {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
   }
 
   /* ---------- Safety Guides ---------- */
@@ -1198,7 +1189,7 @@
       <div>
         <span class="eyebrow">Maukerja Safety Centre<svg class="eyebrow-shield" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12.2l2.2 2.2 4.3-4.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h1>Stay Safe During Your Job Search</h1>
-        <p class="lede">We want every jobseeker to feel safer and more confident when looking for a job. That's why Maukerja is here to help you check, report and know what to do when something doesn't feel right.</p>
+        <p class="lede">Your safety matters throughout your job search. Maukerja helps you check what feels off, report concerns and know what to do next.</p>
         <span class="campaign-tag">Not sure? #CheckDulu</span>
         <div class="cta-group">
           <span class="trust-line">
@@ -1257,7 +1248,7 @@
       <div class="help-choices-head">
         <span class="eyebrow">Get Help</span>
         <h2>How can we help?</h2>
-        <p>Find out what to do based on your situation.</p>
+        <p>Choose what you need help with.</p>
       </div>
       <div class="help-grid">
         <div class="help-card">
@@ -1290,10 +1281,9 @@
 
   <section class="steps" id="verify">
     <div class="wrap">
-      <span class="eyebrow">Verify</span>
+      <span class="eyebrow">Verify a Hiring Message</span>
       <h2>IsItLegit?</h2>
-      <p class="section-question">How to Verify a Hiring Message</p>
-      <p class="section-explainer">JobGuard can help check whether someone contacting you about a job you applied for on Maukerja is associated with the employer.</p>
+      <p class="section-explainer">Not sure who contacted you about a job you applied for on Maukerja? JobGuard can help check whether the contact is associated with the employer.</p>
 
       <h3 class="process-heading">How it works</h3>
       <div class="steps-grid">
@@ -1355,7 +1345,6 @@
         <li>Payment details, if relevant</li>
       </ul>
       <a href="mailto:[OFFICIAL REPORTING EMAIL]" class="btn btn-primary">Report via Email &rarr;</a>
-      <p class="placeholder-note">Reporting email to be confirmed — placeholder shown until the official address is provided.</p>
     </div>
   </section>
 
@@ -1370,22 +1359,33 @@
           <div class="mini-steps">
             <div class="mini-step">
               <span class="num">01</span>
-              <p>Open the job ad</p>
+              <div>
+                <p class="mini-step-title">Open the job ad</p>
+                <p class="mini-step-desc">Find the job ad you want to report on Maukerja.</p>
+              </div>
             </div>
             <div class="mini-step">
               <span class="num">02</span>
-              <p>Click "Report"</p>
+              <div>
+                <p class="mini-step-title">Click the three-dot menu (&#8942;)</p>
+                <p class="mini-step-desc">Look for the three-dot menu on the job ad.</p>
+              </div>
             </div>
             <div class="mini-step">
               <span class="num">03</span>
-              <p>Choose the relevant reason</p>
+              <div>
+                <p class="mini-step-title">Select "Report This Job"</p>
+                <p class="mini-step-desc">Choose "Report This Job" from the menu.</p>
+              </div>
             </div>
             <div class="mini-step">
               <span class="num">04</span>
-              <p>Submit your report</p>
+              <div>
+                <p class="mini-step-title">Follow the instructions</p>
+                <p class="mini-step-desc">Complete the required information and submit your report.</p>
+              </div>
             </div>
           </div>
-          <p class="placeholder-note">Steps shown are general guidance and will be updated to match Maukerja's exact reporting flow.</p>
         </div>
         <div class="report-job-media">
           <img src="assets/report-job-ad-guide.png" alt="Maukerja job listing with the three-dot menu open, showing the &quot;Report This Job&quot; option">
@@ -1398,7 +1398,7 @@
     <div class="wrap">
       <div class="situations-head">
         <span class="eyebrow">Protect Yourself</span>
-        <h2><span class="brand-tag">#CheckDulu</span> Before You Proceed</h2>
+        <h2>Before You Proceed, <span class="brand-tag">#CheckDulu</span></h2>
         <p>A few quick checks can help you stay safer during your job search.</p>
       </div>
       <div class="situations-row">
@@ -1443,7 +1443,7 @@
       <div class="articles-head">
         <span class="eyebrow">Safety Awareness</span>
         <h2>SpotTheSigns.</h2>
-        <p>Know what to look out for before you respond to a hiring message.</p>
+        <p>Practical guides to help you recognise warning signs and stay safer throughout your job search.</p>
       </div>
       <div class="articles-grid">
         <article class="article-card">
